@@ -1,0 +1,54 @@
+:root {
+	--Lineargradient: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+	--Red: hsl(0, 100%, 66%);
+
+	--White: hsl(0, 0%, 100%);
+	--Lighgrayishviolet: hsl(270, 3%, 87%);
+	--Dargrayisviolet: hsl(279, 6%, 55%);
+	--Verdarviolet: hsl(278, 68%, 11%);
+}
+
+body {
+	font-family: "Space Grotesk", sans-serif;
+	background: var(--White);
+}
+
+body::after {
+	content: "";
+	background-image: url("../assets/bg-main-desktop.png");
+	background-size: cover;
+	width: 33.5%;
+	height: 100vh;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -100;
+	transition: width 0.35s ease-in-out, height 0.35s ease-in-out;
+}
+
+.body-slider::after {
+	width: 100%;
+}
+
+#root {
+	display: flex;
+	min-height: 100vh;
+	align-items: center;
+	justify-content: center;
+}
+
+@media screen and (max-width: 750px) {
+	#root {
+		flex-direction: column;
+	}
+
+	body::after {
+		/* background-image: url("assets/bg-main-mobile.png"); */
+		height: 40%;
+		width: 100%;
+	}
+
+	.body-slider::after {
+		height: 100%;
+	}
+}
